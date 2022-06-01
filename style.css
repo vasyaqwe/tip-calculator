@@ -173,6 +173,7 @@ small {
     border-radius: 0.25rem;
     padding: 0.5em 2em;
     transition: all 0.1s ease;
+    align-self: end;
 }
 
 .btn-reset:hover {
@@ -283,13 +284,13 @@ aside {
     padding: 2em 2em;
     border-radius: 1.25rem;
     display: grid;
-    gap: 6rem;
 }
 
 .aside__prices {
     font-size: 0.8rem;
     display: grid;
     gap: 2rem;
+    align-self: start;
 }
 
 .aside__prices__tip p,
