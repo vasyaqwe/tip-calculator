@@ -1,0 +1,384 @@
+:root {
+    --color-cyan-light: hsl(185, 41%, 84%);
+    --color-cyan: hsl(172, 67%, 45%);
+    --color-cyan-dark: hsl(183, 100%, 15%);
+
+    --color-grey: hsl(186, 14%, 43%);
+    --color-grey-light: hsl(184, 14%, 56%);
+    --color-white: hsl(189, 41%, 97%);
+}
+
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    outline: none;
+}
+
+.container__btn:nth-child(1) {
+    grid-area: one;
+}
+
+.container__btn:nth-child(2) {
+    grid-area: two;
+}
+
+.container__btn:nth-child(3) {
+    grid-area: three;
+}
+
+.container__btn:nth-child(4) {
+    grid-area: four;
+}
+
+.container__btn:nth-child(5) {
+    grid-area: five;
+}
+
+.container__btn:nth-child(6) {
+    grid-area: six;
+}
+
+.container__btn:nth-child(7) {
+    grid-area: seven;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Space Mono', sans-serif;
+    background-color: var(--color-cyan-light);
+    display: grid;
+    place-items: center;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+small {
+    color: hsl(0, 89%, 71%);
+    float: right;
+    margin-bottom: 0.4rem;
+}
+
+.logo {
+    margin-inline: auto;
+    margin-bottom: min(10vw, 5rem);
+    margin-top: 1rem;
+}
+
+[data-percent] {
+    font-size: min(5vw, 1.2rem);
+    cursor: pointer;
+    background-color: var(--color-cyan-dark);
+    color: var(--color-white);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.3em 2em;
+    transition: background-color 0.5s, color 0.5s, transform 0.1s;
+
+}
+
+[data-percent]:hover {
+    background-color: var(--color-cyan);
+    color: var(--color-cyan-dark);
+}
+
+[data-percent]:focus {
+    background-color: var(--color-cyan);
+    color: var(--color-cyan-dark);
+}
+
+[data-percent]:active {
+    transform: translateY(5%);
+}
+
+.btn-reset {
+    width: 100%;
+    font-size: min(5vw, 1.3rem);
+    cursor: pointer;
+    background-color: var(--color-cyan);
+    color: var(--color-cyan-dark);
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5em 2em;
+    transition: all 0.1s ease;
+}
+
+.btn-reset:hover {
+    background-color: var(--color-cyan-light);
+    color: var(--color-cyan-dark);
+}
+
+.btn-reset:active {
+    transform: translateY(5%);
+    scale: 0.95;
+}
+
+
+input {
+    padding: 0.2em 0.5em;
+    font-size: min(8vw, 1.5rem);
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-cyan-dark);
+    direction: rtl;
+}
+
+input:not(.custom-percent) {
+    width: 100%;
+}
+
+.custom-percent {
+    font-size: min(5vw, 1.5rem);
+    max-width: 120px;
+    padding: 0 0.5em;
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--color-cyan-dark);
+}
+
+.custom-percent:invalid,
+.bill:invalid,
+.ppl:invalid {
+    outline: 2px solid hsl(0, 89%, 71%);
+}
+
+.invalid {
+    outline: 2px solid hsl(0, 89%, 71%);
+}
+
+.bill {
+    background-image: url(images/icon-dollar.svg);
+    background-repeat: no-repeat;
+    background-position: left 5% center;
+}
+
+.ppl {
+    background-image: url(images/icon-person.svg);
+    background-repeat: no-repeat;
+    background-position: left 5% center;
+}
+
+
+
+input:focus {
+    outline: 2px solid var(--color-cyan);
+}
+
+
+label,
+span {
+    color: var(--color-grey);
+}
+
+.container {
+    margin-inline: auto;
+    padding: 2.5em;
+    background-color: white;
+    max-width: 900px;
+    border-radius: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.container__info {
+    display: grid;
+    gap: 2rem;
+}
+
+.container__bill label,
+.container__ppl label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.container__btns {
+    display: grid;
+    grid-template-areas:
+        'one one one'
+        'two three four'
+        'five six seven';
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    grid-auto-flow: column;
+}
+
+aside {
+    background-color: var(--color-cyan-dark);
+    color: var(--color-white);
+    padding: 2em 2em;
+    border-radius: 1.25rem;
+    display: grid;
+    gap: 6rem;
+}
+
+.aside__prices {
+    font-size: 0.8rem;
+    display: grid;
+    gap: 2rem;
+}
+
+.aside__prices__tip p,
+.aside__prices__total p {
+    font-size: min(7vw, 1rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aside__prices__tip__price,
+.aside__prices__total__price {
+    font-size: min(15vw, 2.5rem);
+    display: flex;
+    justify-content: flex-end;
+    color: var(--color-cyan);
+}
+
+.aside__prices__tip p span,
+.aside__prices__total p span {
+    display: block;
+    color: var(--color-grey-light);
+}
+
+.aside__prices__tip,
+.aside__prices__total {
+    color: var(--color-white);
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .container__btns {
+        display: grid;
+        grid-template-areas:
+            'one .'
+            'two three'
+            'four five'
+            'six seven';
+        grid-template-columns: 50% 50%;
+        gap: 1rem;
+    }
+
+    input {
+        max-width: 280px;
+    }
+
+    aside {
+        margin-top: 2rem;
+    }
+
+    .custom-percent {
+        max-width: 170.4px;
+        padding: 0 0.5em;
+        background-color: var(--color-white);
+        border: none;
+        border-radius: 0.25rem;
+        color: var(--color-cyan-dark);
+    }
+
+    .aside__prices__tip,
+    .aside__prices__total {
+        color: var(--color-white);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .custom-percent {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .aside__prices__tip,
+    .aside__prices__total {
+        grid-template-columns: auto;
+        justify-content: center;
+        gap: 0;
+    }
+
+    aside {
+        gap: 1rem;
+    }
+}

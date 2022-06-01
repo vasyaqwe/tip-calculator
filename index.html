@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <img class="logo" src="images/logo.svg" alt="splitter logo">
+    <div class="container">
+      <div class="container__info">
+        <div class="container__bill">
+          <label for="bill">Bill</label>
+          <small></small>
+          <input class="bill" type="number" id="bill" min="1" max="10000" placeholder="0">
+        </div>
+        <div class="container__btns">
+          <span class="container__btn">Select tip %</span>
+          <button class="container__btn" data-percent>5%</button>
+          <button class="container__btn" data-percent>10%</button>
+          <button class="container__btn" data-percent>15%</button>
+          <button class="container__btn" data-percent>25%</button>
+          <button class="container__btn" data-percent>50%</button>
+          <input class="container__btn custom-percent" type="number" placeholder="Custom">
+        </div>
+        <div class="container__ppl">
+          <label for="ppl">Number of people</label>
+          <small></small>
+          <input type="number" class="ppl" min="1" max="30" placeholder="0">
+          <small></small>
+        </div>
+      </div>
+      <aside class="aside">
+        <div class="aside__prices">
+          <div class="aside__prices__tip">
+            <p>Tip Amount <span>/ person</span></p>
+            <div class="aside__prices__tip__price">$0.00</div>
+          </div>
+          <div class="aside__prices__total">
+            <p>Total <span>/ person</span></p>
+            <div class="aside__prices__total__price">$0.00</div>
+          </div>
+        </div>
+        <button class="btn-reset">RESET</button>
+      </aside>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
