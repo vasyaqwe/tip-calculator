@@ -195,15 +195,11 @@ input {
     border-radius: 0.25rem;
     color: var(--color-cyan-dark);
     direction: rtl;
-}
-
-input:not(.custom-percent) {
     width: 100%;
 }
 
 .custom-percent {
     font-size: min(5vw, 1.5rem);
-    max-width: 120px;
     padding: 0 0.5em;
     background-color: var(--color-white);
     border: none;
@@ -279,9 +275,10 @@ span {
 }
 
 aside {
+    overflow-x: hidden;
     background-color: var(--color-cyan-dark);
     color: var(--color-white);
-    padding: 2em 2em;
+    padding: 2em;
     border-radius: 1.25rem;
     display: grid;
 }
@@ -295,7 +292,7 @@ aside {
 
 .aside__prices__tip p,
 .aside__prices__total p {
-    font-size: min(7vw, 1rem);
+    font-size: min(4vw, 1rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -303,7 +300,7 @@ aside {
 
 .aside__prices__tip__price,
 .aside__prices__total__price {
-    font-size: min(15vw, 2.5rem);
+    font-size: min(10vw, 2.5rem);
     display: flex;
     justify-content: flex-end;
     color: var(--color-cyan);
@@ -324,7 +321,10 @@ aside {
 
 @media (max-width: 800px) {
     .container {
+        padding: 1.2em;
         grid-template-columns: 1fr;
+        width: 95%;
+        margin-inline: auto;
     }
 
     .container__btns {
@@ -334,20 +334,17 @@ aside {
             'two three'
             'four five'
             'six seven';
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
         gap: 1rem;
     }
 
-    input {
-        max-width: 280px;
-    }
-
     aside {
-        margin-top: 2rem;
+        margin-top: 0rem;
+        padding: 1em;
+        gap: 2rem;
     }
 
     .custom-percent {
-        max-width: 170.4px;
         padding: 0 0.5em;
         background-color: var(--color-white);
         border: none;
@@ -360,26 +357,6 @@ aside {
         color: var(--color-white);
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-}
-
-@media(max-width: 400px) {
-    .custom-percent {
-        max-width: 120px;
-    }
-}
-
-@media (max-width: 380px) {
-
-    .aside__prices__tip,
-    .aside__prices__total {
-        grid-template-columns: auto;
-        justify-content: center;
         gap: 0;
-    }
-
-    aside {
-        gap: 1rem;
     }
 }

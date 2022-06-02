@@ -30,20 +30,24 @@ const calcPercentage = (btn) => {
         tipEl.innerText = `$0.00`;
         totalEl.innerText = `$0.00`;
         bill.classList.add('invalid');
+    }
+    else if (pplValue < 1 || pplValue > 30) {
+        showError(ppl, 'Too many/Too few people');
+        tipEl.innerText = `$0.00`;
+        totalEl.innerText = `$0.00`;
+        ppl.classList.add('invalid');
+    } else if (pplValue < 1 || pplValue > 30 && billValue < 1 || billValue > 10000) {
+        showError(bill, 'The price is too high/too low');
+        tipEl.innerText = `$0.00`;
+        totalEl.innerText = `$0.00`;
+        bill.classList.add('invalid');
+        showError(ppl, 'Too many/Too few people');
+        ppl.classList.add('invalid');
     } else {
         tipEl.innerText = `$${tipAmount}`;
         totalEl.innerText = `$${totalRounded}`;
         hideError(bill);
         bill.classList.remove('invalid');
-    }
-    if (pplValue < 1 || pplValue > 30) {
-        showError(ppl, 'Too many/Too few people');
-        tipEl.innerText = `$0.00`;
-        totalEl.innerText = `$0.00`;
-        ppl.classList.add('invalid');
-    } else {
-        tipEl.innerText = `$${tipAmount}`;
-        totalEl.innerText = `$${totalRounded}`;
         hideError(ppl);
         ppl.classList.remove('invalid');
     }
